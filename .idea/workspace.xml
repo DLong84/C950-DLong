@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/C950-DLong.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csv_load.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hash_tbl.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/truck.py" afterDir="false" />
+    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="Initial Commit&#10;&#10;-Package, Truck, &amp; HashTable classes implemented with constructors&#10;-add_to_table() function for hash table implemented&#10;-resize() function implemented, allowing for dynamic size adjustment&#10;-csv_load file created, *may delete and put into main.py*&#10;-main.py file created and loaded with test data&#10;&#10;TODO's &amp; FIXME's in place">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_tbl.py" beforeDir="false" afterPath="$PROJECT_DIR$/hash_tbl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.py" beforeDir="false" afterPath="$PROJECT_DIR$/package.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +66,19 @@
       <option name="presentableId" value="Default" />
       <updated>1703880870506</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit&#10;&#10;-Package, Truck, &amp; HashTable classes implemented with constructors&#10;-add_to_table() function for hash table implemented&#10;-resize() function implemented, allowing for dynamic size adjustment&#10;-csv_load file created, *may delete and put into main.py*&#10;-main.py file created and loaded with test data&#10;&#10;TODO's &amp; FIXME's in place">
+      <option name="closed" value="true" />
+      <created>1704320082460</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704320082460</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -85,5 +90,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit&#10;&#10;-Package, Truck, &amp; HashTable classes implemented with constructors&#10;-add_to_table() function for hash table implemented&#10;-resize() function implemented, allowing for dynamic size adjustment&#10;-csv_load file created, *may delete and put into main.py*&#10;-main.py file created and loaded with test data&#10;&#10;TODO's &amp; FIXME's in place" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit&#10;&#10;-Package, Truck, &amp; HashTable classes implemented with constructors&#10;-add_to_table() function for hash table implemented&#10;-resize() function implemented, allowing for dynamic size adjustment&#10;-csv_load file created, *may delete and put into main.py*&#10;-main.py file created and loaded with test data&#10;&#10;TODO's &amp; FIXME's in place" />
   </component>
 </project>

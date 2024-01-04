@@ -1,4 +1,7 @@
 # Class used to implement methods for building a self-adjusting hash table of package objects
+
+
+
 class HashTable:
     # Hash table constructor
     # Hash table has a load factor of <=1 to eliminate collisions
@@ -7,7 +10,7 @@ class HashTable:
         self.elements = 0
         self.table = [None] * starting_size # Create the table structure
 
-        print(self.table)  # FIXME-->Remove later
+        # print(self.table)  # FIXME-->Remove later
 
     # Method used to insert package objects into hash table buckets and check the load factor for self-adjustment
     def add_to_table(self, key, pkg):
@@ -21,8 +24,8 @@ class HashTable:
             self.table[bckt] = pkg  # Add pkg to bucket
             self.elements += 1
 
-        print("Package: " + str(pkg.package_id) + " successfully added to hash table")
-        print(self.table)
+        print("Package with ID: " + str(pkg.package_id) + ", successfully added to hash table")
+        # print(self.table)
 
     # Method used to adjust the size of the hash table to keep a 1-1 mapping and prevent collisions
     def resize(self):
@@ -34,7 +37,7 @@ class HashTable:
             if pkg is not None:
                 key = pkg.package_id  # Pull package id FIXME-->MAY NOT WORK!!
                 newBkt = hash(key) % newTableSize  # Calculate bucket from updated hash function
-                resizedTable.table[newBkt] = pkg  # Add pkg to bucket
+                resizedTable[newBkt] = pkg  # Add pkg to bucket
 
         # Assign initial table variables with new table values
         self.table = resizedTable
@@ -42,3 +45,16 @@ class HashTable:
 
         print("Hash table size has been adjusted to " + str(self.size))
 
+    # Method used to retrieve package object data from the hash table
+    def tblLookUp(self, pkg_id):
+        bucket = hash(int(pkg_id)) % self.size
+        if self.table[bucket] is None or int(pkg_id) > self.size or int(pkg_id) < 1:
+            print("Package Id not found")
+            return False  # TODO-->Might change this around
+        else:
+            return self.table[bucket]
+
+    def printAllPkgs(self):
+        for pkg in self.table:
+            if pkg is not None:
+                print(str(pkg))
