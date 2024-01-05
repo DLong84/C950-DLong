@@ -3,8 +3,9 @@ import csv
 import hash_tbl
 
 class Package:
-    # The Package object constructor....FIXME--->keep an eye on d_time during instantiation!!
-    def __init__(self, package_id, d_address, d_deadline, d_city, d_state, d_zipcode, weight, d_status, d_time="pending"):
+    # The Package object constructor....FIXME--->keep an eye on deliver_time during instantiation!!
+    def __init__(self, package_id, d_address, d_deadline, d_city, d_state, d_zipcode, weight, d_status, depart_time,
+                 deliver_time="pending"):
         self.package_id = package_id
         self.d_address = d_address
         self.d_deadline = d_deadline
@@ -13,15 +14,17 @@ class Package:
         self.d_zipcode = d_zipcode
         self.weight = weight
         self.d_status = d_status
-        self.d_time = d_time
+        self.depart_time = depart_time
+        self.deliver_time = deliver_time
 
     # String method to define how package objects should be shown as a string
     def __str__(self):
         return (f"PackageID: {self.package_id}, Address: {self.d_address}, City: {self.d_city}, State: {self.d_state}, "
                 f"Zip: {self.d_zipcode}, Deadline: {self.d_deadline}, Weight (KILO): {self.weight}, Status: {self.d_status}, "
-                f"Delivery Time: {self.d_time}")
+                f"Delivery Time: {self.deliver_time}")
 
-    # Method to open CSV file, extract package data, and insert into hash table
+    # Method used to open CSV file, extract package data, and insert into hash table
+    # Source: W-2_ChainingHashTable_zyBooks_Key-Value_CSV_Greedy.py
     def loadPackageInfo(fileNm, my_table):
         with open(fileNm) as deliveryPackages:
             packageInfo = csv.reader(deliveryPackages, delimiter=',')
@@ -35,13 +38,14 @@ class Package:
                 d_deadline = pkg[5]
                 weight = pkg[6]
                 delivery_status = "At hub"
-                d_time = "pending"
+                depart_time = None
+                deliver_time = "pending"
 
                 # Instantiate the package object
-                package = Package(package_id, d_address, d_deadline, d_city, d_state, d_zipcode, weight, delivery_status, d_time)
-                # print(package)
+                package = Package(package_id, d_address, d_deadline, d_city, d_state, d_zipcode, weight,
+                                  delivery_status, depart_time, deliver_time)
 
-                # TODO-->Hash table insert function goes here
+                # Insert package into hash table
                 my_table.add_to_table(package_id, package)  # package_id is used as key
 
 

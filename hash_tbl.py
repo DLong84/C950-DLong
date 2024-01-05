@@ -54,6 +54,7 @@ class HashTable:
         else:
             return self.table[bucket]
 
+    # Method used to display all existing hash table package objects and their data
     def printAllPkgs(self):
         for pkg in self.table:
             if pkg is not None:

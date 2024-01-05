@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="Initial Commit&#10;&#10;-Package, Truck, &amp; HashTable classes implemented with constructors&#10;-add_to_table() function for hash table implemented&#10;-resize() function implemented, allowing for dynamic size adjustment&#10;-csv_load file created, *may delete and put into main.py*&#10;-main.py file created and loaded with test data&#10;&#10;TODO's &amp; FIXME's in place">
+    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(HashTable):&#10;&#10;-tblLookup() search function for hash table implemented&#10;-printAllPkgs() function for printing all Packages in hash table implemented&#10;-added 'state' to Package attributes&#10;-added &quot;clean&quot; packages.csv, delivery_addresses.csv &amp; address_distances.csv files&#10;&#10;-TESTED and SUCCESSFUL package object loading from packages.csv&#10;&#10;&#10;TODO's &amp; FIXME's in place">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_load.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_load.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hash_tbl.py" beforeDir="false" afterPath="$PROJECT_DIR$/hash_tbl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.py" beforeDir="false" afterPath="$PROJECT_DIR$/package.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/truck.py" beforeDir="false" afterPath="$PROJECT_DIR$/truck.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +42,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Trial.executor": "Run",
+    "Python.csv_load.executor": "Run",
     "Python.hash_tbl.executor": "Run",
     "Python.main.executor": "Run",
     "Python.package.executor": "Run",
@@ -74,7 +77,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704320082460</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat(HashTable):&#10;&#10;-tblLookup() search function for hash table implemented&#10;-printAllPkgs() function for printing all Packages in hash table implemented&#10;-added 'state' to Package attributes&#10;-added &quot;clean&quot; packages.csv, delivery_addresses.csv &amp; address_distances.csv files&#10;&#10;-TESTED and SUCCESSFUL package object loading from packages.csv&#10;&#10;&#10;TODO's &amp; FIXME's in place">
+      <option name="closed" value="true" />
+      <created>1704404798838</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704404798838</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -93,6 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit&#10;&#10;-Package, Truck, &amp; HashTable classes implemented with constructors&#10;-add_to_table() function for hash table implemented&#10;-resize() function implemented, allowing for dynamic size adjustment&#10;-csv_load file created, *may delete and put into main.py*&#10;-main.py file created and loaded with test data&#10;&#10;TODO's &amp; FIXME's in place" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit&#10;&#10;-Package, Truck, &amp; HashTable classes implemented with constructors&#10;-add_to_table() function for hash table implemented&#10;-resize() function implemented, allowing for dynamic size adjustment&#10;-csv_load file created, *may delete and put into main.py*&#10;-main.py file created and loaded with test data&#10;&#10;TODO's &amp; FIXME's in place" />
+    <MESSAGE value="feat(HashTable):&#10;&#10;-tblLookup() search function for hash table implemented&#10;-printAllPkgs() function for printing all Packages in hash table implemented&#10;-added 'state' to Package attributes&#10;-added &quot;clean&quot; packages.csv, delivery_addresses.csv &amp; address_distances.csv files&#10;&#10;-TESTED and SUCCESSFUL package object loading from packages.csv&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(HashTable):&#10;&#10;-tblLookup() search function for hash table implemented&#10;-printAllPkgs() function for printing all Packages in hash table implemented&#10;-added 'state' to Package attributes&#10;-added &quot;clean&quot; packages.csv, delivery_addresses.csv &amp; address_distances.csv files&#10;&#10;-TESTED and SUCCESSFUL package object loading from packages.csv&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
   </component>
 </project>
