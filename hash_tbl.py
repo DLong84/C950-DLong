@@ -57,5 +57,5 @@ class HashTable:
     # Method used to display all existing hash table package objects and their data
     def printAllPkgs(self):
         for pkg in self.table:
-            if pkg is not None:
+            if pkg is not None:  # If package object exists
                 print(str(pkg))

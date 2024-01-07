@@ -49,14 +49,6 @@ class Package:
                 my_table.add_to_table(package_id, package)  # package_id is used as key
 
 
-
-
-
-
-
-
-
-
     # FIXME-->Method used to retrieve a Package object's status
     def get_status(self, package_id):
         # TODO implement how to pull package status
