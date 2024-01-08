@@ -37,13 +37,13 @@ class Package:
                 d_zipcode = pkg[4]
                 d_deadline = pkg[5]
                 weight = pkg[6]
-                delivery_status = "At hub"
+                d_status = "At hub"
                 depart_time = None
                 deliver_time = "pending"
 
                 # Instantiate the package object
                 package = Package(package_id, d_address, d_deadline, d_city, d_state, d_zipcode, weight,
-                                  delivery_status, depart_time, deliver_time)
+                                  d_status, depart_time, deliver_time)
 
                 # Insert package into hash table
                 my_table.add_to_table(package_id, package)  # package_id is used as key

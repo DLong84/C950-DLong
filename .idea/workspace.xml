@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(): CSV data&#10;&#10;-updated loading of distance and address data for modularity&#10;-implemented getAddyId() and distanceBtwn() functions for obtaining ID's and distances between two addresses&#10;-TESTED and SUCCESSFUL loading/access to all csv data&#10;&#10;&#10;TODO's &amp; FIXME's in place">
+    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(): address calculations&#10;&#10;-updated distanceBtwn() as &quot;overloaded&quot; to take in the addresses as strings or integers&#10;-implemented nearestAddress() for obtaining the address closest to the current address&#10;-fixed bug/typo in delivery_addresses.csv&#10;-ALL updates and implementations have been successfully tested&#10;&#10;&#10;TODO's &amp; FIXME's in place">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSV/delivery_addresses.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CSV/delivery_addresses.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv_load.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_load.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_load.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.py" beforeDir="false" afterPath="$PROJECT_DIR$/package.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/truck.py" beforeDir="false" afterPath="$PROJECT_DIR$/truck.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704588366700</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat(): address calculations&#10;&#10;-updated distanceBtwn() as &quot;overloaded&quot; to take in the addresses as strings or integers&#10;-implemented nearestAddress() for obtaining the address closest to the current address&#10;-fixed bug/typo in delivery_addresses.csv&#10;-ALL updates and implementations have been successfully tested&#10;&#10;&#10;TODO's &amp; FIXME's in place">
+      <option name="closed" value="true" />
+      <created>1704679401400</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1704679401400</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -121,6 +130,7 @@
     <MESSAGE value="feat(HashTable):&#10;&#10;-tblLookup() search function for hash table implemented&#10;-printAllPkgs() function for printing all Packages in hash table implemented&#10;-added 'state' to Package attributes&#10;-added &quot;clean&quot; packages.csv, delivery_addresses.csv &amp; address_distances.csv files&#10;&#10;-TESTED and SUCCESSFUL package object loading from packages.csv&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): CSV data loading&#10;&#10;-updated/finished Truck class constructor&#10;-updated Package class constructor&#10;-created loadDistances() &amp; loadAddresses() for loading remaining csv files/data&#10;-moved &quot;test&quot; data over to uncommitted Trial.py file for cleanup&#10;-TESTED and SUCCESSFUL loading/access to all csv data&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): CSV data&#10;&#10;-updated loading of distance and address data for modularity&#10;-implemented getAddyId() and distanceBtwn() functions for obtaining ID's and distances between two addresses&#10;-TESTED and SUCCESSFUL loading/access to all csv data&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(): CSV data&#10;&#10;-updated loading of distance and address data for modularity&#10;-implemented getAddyId() and distanceBtwn() functions for obtaining ID's and distances between two addresses&#10;-TESTED and SUCCESSFUL loading/access to all csv data&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
+    <MESSAGE value="feat(): address calculations&#10;&#10;-updated distanceBtwn() as &quot;overloaded&quot; to take in the addresses as strings or integers&#10;-implemented nearestAddress() for obtaining the address closest to the current address&#10;-fixed bug/typo in delivery_addresses.csv&#10;-ALL updates and implementations have been successfully tested&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(): address calculations&#10;&#10;-updated distanceBtwn() as &quot;overloaded&quot; to take in the addresses as strings or integers&#10;-implemented nearestAddress() for obtaining the address closest to the current address&#10;-fixed bug/typo in delivery_addresses.csv&#10;-ALL updates and implementations have been successfully tested&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
   </component>
 </project>
