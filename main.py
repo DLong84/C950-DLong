@@ -7,5 +7,5 @@ from truck import Truck
 
 pckgHashTbl = HashTable()
 Package.loadPackageInfo("CSV/packages.csv", pckgHashTbl)  # LOAD Package data into hash table
-pckgHashTbl.printAllPkgs()
+# pckgHashTbl.printAllPkgs()
 

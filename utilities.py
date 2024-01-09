@@ -1,5 +1,7 @@
 # Utility module used to implement functions for opening/loading data from CSV files and accessing respective data
 import csv
+import datetime
+
 import main
 
 # Method used to open CSV file, extract address distance data, and insert into a 2-D list named distanceInfoList
@@ -59,16 +61,16 @@ def dispatchNearestPackages(truck):
 
     truck.loaded_packages.clear()  # FIXME-->MAY NOT NEED, TEST WITHOUT
 
-    lowest_mileage_val = None  # Assign an arbitrary value larger than any mileage between two addresses
+
     currentAddyID = getAddyId(truck.current_address)  # Obtain current address's ID and assign to variable
 
     # This will run while there are still packages on the truck to be delivered
     while len(pkgList) > 0:
-
+        lowest_mileage_val = None  # Assign an arbitrary value larger than any mileage between two addresses
 
         # This will find the address nearest to the current address
         for pkg in pkgList:  # Loop through list of package IDs
-            # pkgObj = main.pckgHashTbl.tblLookUp(pkgID)  # Find package object in hash table and assign to variable
+            # FIXME-->REMOVE? pkgObj = main.pckgHashTbl.tblLookUp(pkgID)  # Find package object in hash table and assign to variable
             addyID = getAddyId(pkg.d_address)  # Obtain the package object's address ID
             miles = distanceBtwn(currentAddyID, addyID)  # Find the distance between current address and the package's address
             print("Package #" + str(pkg.package_id) + ", Distance: " + str(miles))  # FIXME-->Remove later
@@ -78,15 +80,27 @@ def dispatchNearestPackages(truck):
             if lowest_mileage_val is None or miles <= lowest_mileage_val:
                 lowest_mileage_val = miles
                 nearestAddyID = addyID
+                pkgToDeliver = pkg
                 print("lowest distance: " + str(lowest_mileage_val))  # FIXME-->Remove later
 
-                currentAddyID = nearestAddyID  # Nearest address TODO
-                pkgList.remove(pkg)
+        currentAddyID = nearestAddyID  # Nearest address TODO
+        truck.current_address = getAddyName(currentAddyID)  # Update truck's address name
+        print(f"Truck's current addy: {truck.current_address}")
+        truck.mileage += lowest_mileage_val
+        truck.current_time += datetime.timedelta(hours=lowest_mileage_val / 18)
+        pkgToDeliver.deliver_time = truck.current_time
+        pkgList.remove(pkgToDeliver)  # FIXME-->Unload the package using pkg ID?
+        print(pkgList)
+        print(f"Truck total miles: {truck.mileage}")
 
-            truck.mileage += lowest_mileage_val
-            # TODO update truck current time with--> truck.current_time += datetime.timedelta(hours=lowest_mileage_val / 18)
-            # TODO pkg.deliver_time = truck.current_time
-            pkg.d_status = "Delivered"  # FIXME-->MAY NOT NEED
+    # Return truck to hub
+    if truck.truck_id == 1:
+        miles = distanceBtwn(currentAddyID, 0)  # Distance from current address back to hub
+        truck.mileage += miles
+        truck.current_time += datetime.timedelta(hours=miles / 18)
+        truck.current_address = getAddyName(0)  # Update truck's address name
+
+
 
 
 
