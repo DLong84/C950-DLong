@@ -4,19 +4,9 @@ import datetime
 
 import main
 
-# Method used to open CSV file, extract address distance data, and insert into a 2-D list named distanceInfoList
-distanceInfoList = []  # List for holding the address distance information
-def loadDistances(fileNm):
-    with open(fileNm, encoding='utf-8-sig') as distancesFile:
-        distanceInfo = csv.reader(distancesFile)
-
-        # Place all values into the list
-        for val in distanceInfo:
-            distanceInfoList.append(val)
-
 
 # Method used to open CSV file, extract address ID/street data, and insert into a 2-D list named addressInfoList
-addressInfoList = []  # List for holding addresses and their corresponding ID's
+addressInfoList = []  # Global list for holding addresses and their corresponding ID's
 def loadAddresses(fileNm):
     with open(fileNm, encoding='utf-8-sig') as addressesFile:
         addressInfo = csv.reader(addressesFile)
@@ -39,6 +29,16 @@ def getAddyName(address):  # FIXME-->May not be needed
         if row[0] == str(address):
             return row[1]
 
+# Function used to open CSV file, extract address distance data, and insert into a 2-D list named distanceInfoList
+distanceInfoList = []  # Global list for holding the address distance information
+def loadDistances(fileNm):
+    with open(fileNm, encoding='utf-8-sig') as distancesFile:
+        distanceInfo = csv.reader(distancesFile)
+
+        # Place all values into the list
+        for val in distanceInfo:
+            distanceInfoList.append(val)
+
 # Method used to obtain the float mileage value between two addresses. Input addresses can be either strings or integers
 def distanceBtwn(add1, add2):
     if isinstance(add1, str) and isinstance(add2, str):  # If addresses are strings
@@ -51,28 +51,31 @@ def distanceBtwn(add1, add2):
     else:
         return float(distanceInfoList[add1][add2])
 
-# FIXME Method used to obtain the closest address ID, given a list of package IDs, from the input address
+# FIXME Function used to obtain the closest address ID, given a list of package IDs, from the input address
 def dispatchNearestPackages(truck):
-    # From the truck's package ID list, pull package objects from hash table and append into a list
+    # From the truck's list of package IDs, pull package objects from hash table, add the corresponding truck's ID,
+    # and append into a list
     pkgList = []
     for pkgID in truck.loaded_packages:
-        pkgObj = main.pckgHashTbl.tblLookUp(pkgID)
-        pkgList.append(pkgObj)
+        pkgObj = main.pckgHashTbl.tblLookUp(pkgID)  # Find/pull package from hash table and assign to variable
+        pkgObj.trk_id = truck.truck_id  # Assign the package to the truck
+        pkgObj.depart_time = truck.departure_t  # TODO-->Keep an eye on this for truck 2's departure!!
+        pkgList.append(pkgObj)  # Add package object to list
 
     truck.loaded_packages.clear()  # FIXME-->MAY NOT NEED, TEST WITHOUT
 
 
-    currentAddyID = getAddyId(truck.current_address)  # Obtain current address's ID and assign to variable
+    currentAddyID = getAddyId(truck.current_address)  # Obtain truck's current address's ID and assign to variable
 
     # This will run while there are still packages on the truck to be delivered
     while len(pkgList) > 0:
-        lowest_mileage_val = None  # Assign an arbitrary value larger than any mileage between two addresses
+        lowest_mileage_val = None  # Assign an arbitrary starting value
 
-        # This will find the address nearest to the current address
+        # This will TODO
         for pkg in pkgList:  # Loop through list of package IDs
-            # FIXME-->REMOVE? pkgObj = main.pckgHashTbl.tblLookUp(pkgID)  # Find package object in hash table and assign to variable
+
             addyID = getAddyId(pkg.d_address)  # Obtain the package object's address ID
-            miles = distanceBtwn(currentAddyID, addyID)  # Find the distance between current address and the package's address
+            miles = distanceBtwn(currentAddyID, addyID)  # Get distance between current address and package's address
             print("Package #" + str(pkg.package_id) + ", Distance: " + str(miles))  # FIXME-->Remove later
 
             # If the current package's address is closer than the lowest mileage value thus far, assign the current
@@ -94,19 +97,13 @@ def dispatchNearestPackages(truck):
         print(f"Truck total miles: {truck.mileage}")
 
     # Return truck to hub
-    if truck.truck_id == 1:
+    if truck.truck_id == 1:  # TODO-->May need to use truck 3 instead, depending on which gets done earlier
         miles = distanceBtwn(currentAddyID, 0)  # Distance from current address back to hub
         truck.mileage += miles
         truck.current_time += datetime.timedelta(hours=miles / 18)
         truck.current_address = getAddyName(0)  # Update truck's address name
+        print(main.truck1.current_time)
+        main.truck2.departure_t = truck.current_time
+        main.truck2.current_time = main.truck2.departure_t
 
 
-
-
-
-
-# FIXME!!!!! DELETE?
-def dispatchPackages(truck):
-    while len(truck.loaded_packages) > 0:
-        currentAddy = truck.current_address
-        # nextAddy = nearestAddress(currentAddy, truck.loaded_packages)

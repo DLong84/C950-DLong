@@ -4,9 +4,10 @@ import hash_tbl
 
 class Package:
     # The Package object constructor....FIXME--->keep an eye on deliver_time during instantiation!!
-    def __init__(self, package_id, d_address, d_deadline, d_city, d_state, d_zipcode, weight, d_status, depart_time,
-                 deliver_time):
+    def __init__(self, package_id, trk_id, d_address, d_deadline, d_city, d_state, d_zipcode, weight, d_status,
+                 depart_time, deliver_time):
         self.package_id = package_id
+        self.trk_id = trk_id
         self.d_address = d_address
         self.d_deadline = d_deadline
         self.d_city = d_city
@@ -31,18 +32,19 @@ class Package:
             next(packageInfo)
             for pkg in packageInfo:
                 package_id = int(pkg[0])
+                trk_id = None
                 d_address = pkg[1]
                 d_city = pkg[2]
                 d_state = pkg[3]
                 d_zipcode = pkg[4]
                 d_deadline = pkg[5]
                 weight = pkg[6]
-                d_status = "At hub"
+                d_status = None
                 depart_time = None
                 deliver_time = None
 
                 # Instantiate the package object
-                package = Package(package_id, d_address, d_deadline, d_city, d_state, d_zipcode, weight,
+                package = Package(package_id, trk_id, d_address, d_deadline, d_city, d_state, d_zipcode, weight,
                                   d_status, depart_time, deliver_time)
 
                 # Insert package into hash table
@@ -51,10 +53,9 @@ class Package:
     # FIXME-->Method used to update a Package object's status
     # TODO-->TEST THIS
     def update_status(self, time_probed):
-        if time_probed <= self.deliver_time:
+        if self.depart_time is None or time_probed < self.depart_time:
             self.d_status = "At hub"
         elif self.depart_time <= time_probed < self.deliver_time:
-            self.d_status = "En route"
+            self.d_status = f"En route on Truck-{self.trk_id}"
         elif time_probed >= self.deliver_time:
-            self.d_status = f"Delivered at: {self.deliver_time}"
-        # TODO-->Watch for showing/hiding delivery time depending on time
+            self.d_status = f"Delivered by Truck-{self.trk_id} at {self.deliver_time}"

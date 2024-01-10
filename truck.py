@@ -10,6 +10,5 @@ class Truck:
         self.mileage = mileage
 
         # String method to define how package objects should be shown as a string
-        def __str__(self):  # TODO
+        def __str__(self):  # TODO ????
             pass
-

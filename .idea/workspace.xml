@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(): utilities, delivery algorithm&#10;&#10;-renamed csv_load.py file to--&gt; utilities.py&#10;-implemented getAddyName() for retrieving an address name from its ID&#10;-removed nearestAddress() function&#10;-began implementing dispatchNearestPackages(), which took in the nearestAddress() function logic to combine the two&#10;-ALL updates and implementations have been successfully tested, EXCEPT for dispatchNearestPackages() function&#10;&#10;&#10;TODO's &amp; FIXME's in place&#10;&#10;&#10;1/8 evening:&#10;-implemented update_status(), needs some work">
+    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(): delivery algorithm, Trucks, Packages&#10;&#10;-implemented update_status() method in Packages class&#10;-&quot;finished&quot;/tested dispatchNearestPackages() implementation&#10;-instantiated 3 Truck objects with proper data, started loading with correct packages&#10;-ALL updates and implementations have been successfully tested, EXCEPT for update_status() function&#10;&#10;&#10;TODO's &amp; FIXME's in place">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_tbl.py" beforeDir="false" afterPath="$PROJECT_DIR$/hash_tbl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.py" beforeDir="false" afterPath="$PROJECT_DIR$/package.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/truck.py" beforeDir="false" afterPath="$PROJECT_DIR$/truck.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +46,7 @@
     "Python.hash_tbl.executor": "Run",
     "Python.main.executor": "Run",
     "Python.package.executor": "Run",
+    "Python.testing.executor": "Run",
     "Python.utilities.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -145,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704752437567</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat(): delivery algorithm, Trucks, Packages&#10;&#10;-implemented update_status() method in Packages class&#10;-&quot;finished&quot;/tested dispatchNearestPackages() implementation&#10;-instantiated 3 Truck objects with proper data, started loading with correct packages&#10;-ALL updates and implementations have been successfully tested, EXCEPT for update_status() function&#10;&#10;&#10;TODO's &amp; FIXME's in place">
+      <option name="closed" value="true" />
+      <created>1704831324199</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704831324199</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -169,6 +180,7 @@
     <MESSAGE value="feat(): CSV data&#10;&#10;-updated loading of distance and address data for modularity&#10;-implemented getAddyId() and distanceBtwn() functions for obtaining ID's and distances between two addresses&#10;-TESTED and SUCCESSFUL loading/access to all csv data&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): address calculations&#10;&#10;-updated distanceBtwn() as &quot;overloaded&quot; to take in the addresses as strings or integers&#10;-implemented nearestAddress() for obtaining the address closest to the current address&#10;-fixed bug/typo in delivery_addresses.csv&#10;-ALL updates and implementations have been successfully tested&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): utilities, delivery algorithm&#10;&#10;-renamed csv_load.py file to--&gt; utilities.py&#10;-implemented getAddyName() for retrieving an address name from its ID&#10;-removed nearestAddress() function&#10;-began implementing dispatchNearestPackages(), which took in the nearestAddress() function logic to combine the two&#10;-ALL updates and implementations have been successfully tested, EXCEPT for dispatchNearestPackages() function&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(): utilities, delivery algorithm&#10;&#10;-renamed csv_load.py file to--&gt; utilities.py&#10;-implemented getAddyName() for retrieving an address name from its ID&#10;-removed nearestAddress() function&#10;-began implementing dispatchNearestPackages(), which took in the nearestAddress() function logic to combine the two&#10;-ALL updates and implementations have been successfully tested, EXCEPT for dispatchNearestPackages() function&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
+    <MESSAGE value="feat(): delivery algorithm, Trucks, Packages&#10;&#10;-implemented update_status() method in Packages class&#10;-&quot;finished&quot;/tested dispatchNearestPackages() implementation&#10;-instantiated 3 Truck objects with proper data, started loading with correct packages&#10;-ALL updates and implementations have been successfully tested, EXCEPT for update_status() function&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(): delivery algorithm, Trucks, Packages&#10;&#10;-implemented update_status() method in Packages class&#10;-&quot;finished&quot;/tested dispatchNearestPackages() implementation&#10;-instantiated 3 Truck objects with proper data, started loading with correct packages&#10;-ALL updates and implementations have been successfully tested, EXCEPT for update_status() function&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
   </component>
 </project>

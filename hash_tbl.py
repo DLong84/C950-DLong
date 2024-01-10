@@ -12,6 +12,10 @@ class HashTable:
 
         # print(self.table)  # FIXME-->Remove later
 
+    # TODO
+    def __iter__(self):
+        return iter(self.table)
+
     # Method used to insert package objects into hash table buckets and check the load factor for self-adjustment
     def add_to_table(self, key, pkg):
         # Check load factor & resize if table is full
