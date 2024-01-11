@@ -103,7 +103,7 @@ def dispatchNearestPackages(truck):
         truck.current_time += datetime.timedelta(hours=miles / 18)
         truck.current_address = getAddyName(0)  # Update truck's address name
         print(main.truck1.current_time)
-        main.truck2.departure_t = truck.current_time
+        main.truck2.departure_t = truck.current_time  # FIXME-->Need to account for package 9's address change at 10:20am!!
         main.truck2.current_time = main.truck2.departure_t
 
 

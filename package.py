@@ -1,9 +1,11 @@
 # This class represents a package object for storing package information data
 import csv
+import datetime
+
 import hash_tbl
 
 class Package:
-    # The Package object constructor....FIXME--->keep an eye on deliver_time during instantiation!!
+    # The Package object constructor
     def __init__(self, package_id, trk_id, d_address, d_deadline, d_city, d_state, d_zipcode, weight, d_status,
                  depart_time, deliver_time):
         self.package_id = package_id
@@ -24,12 +26,14 @@ class Package:
                 f"Zip: {self.d_zipcode}, Deadline: {self.d_deadline}, Weight (KILO): {self.weight}, "
                 f"Status: {self.d_status}")
 
-    # Method used to open CSV file, extract package data, and insert into hash table
+    # Method used to open CSV file, extract package data, and insert into hash table. Every row in the file corresponds
+    # to a different package object.
     # Source: W-2_ChainingHashTable_zyBooks_Key-Value_CSV_Greedy.py
     def loadPackageInfo(fileNm, my_table):
         with open(fileNm) as deliveryPackages:
             packageInfo = csv.reader(deliveryPackages, delimiter=',')
             next(packageInfo)
+            # Go down the file, row by row, and load the row's data into the package's attributes
             for pkg in packageInfo:
                 package_id = int(pkg[0])
                 trk_id = None
@@ -50,12 +54,22 @@ class Package:
                 # Insert package into hash table
                 my_table.add_to_table(package_id, package)  # package_id is used as key
 
-    # FIXME-->Method used to update a Package object's status
-    # TODO-->TEST THIS
+    # Method used to update a Package object's status and text color depending on the time. ANSI escape codes are
+    # utilized for the output status text color changes.
+    # Source: https://www.studytonight.com/python-howtos/how-to-print-colored-text-in-python
     def update_status(self, time_probed):
+        # Update package's delivery status, depending on the time
         if self.depart_time is None or time_probed < self.depart_time:
-            self.d_status = "At hub"
+            self.d_status = "\033[91mAt hub \033[0m"  # Red text
         elif self.depart_time <= time_probed < self.deliver_time:
-            self.d_status = f"En route on Truck-{self.trk_id}"
+            self.d_status = f"\033[93mEn route on Truck-{self.trk_id}\033[0m"  # Yellow text
         elif time_probed >= self.deliver_time:
-            self.d_status = f"Delivered by Truck-{self.trk_id} at {self.deliver_time}"
+            self.d_status = f"\033[92mDelivered by Truck-{self.trk_id} at {self.deliver_time}\033[0m"  # Green text
+
+        # Update package #9's address, depending on the time
+        if self.package_id == 9 and time_probed < datetime.timedelta(hours=10, minutes=20):
+            self.d_address = "300 State St"
+            self.d_zipcode = "84103"
+        elif self.package_id == 9 and time_probed >= datetime.timedelta(hours=10, minutes=20):
+            self.d_address = "410 S State St"
+            self.d_zipcode = "84111"
