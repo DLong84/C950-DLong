@@ -20,15 +20,25 @@ pckgHashTbl = HashTable()
 Package.loadPackageInfo("CSV/packages.csv", pckgHashTbl)  # Load package data from file into hash table
 
 # Instantiate the 3 truck objects, along with their attributes including their packages to be delivered and assign
-# to variables. Assigning to variables is necessary for being able to access/manipulate each truck's data
+# to variables. Assigning to variables is necessary for being able to access/manipulate each truck's data.
+#
+# Packages are assigned and grouped to certain trucks based on their delays, delivery deadlines, and address vicinities.
+
+# Truck 1's early departure time of 8:00am is based off of most of its packages having early delivery deadlines.
 truck1 = Truck(1, "4001 South 700 East", datetime.timedelta,
-               datetime.timedelta(hours=8, minutes=0), [1,13,14,15,16,20,29,30,31,34,37,40],0.0)
+               datetime.timedelta(hours=8, minutes=0), [1,4,7,8,13,14,15,16,20,21,29,30,31,34,37,40],
+               0.0)
 
+# Trucks 2's departure time is calculated based off of trucks 1 & 3 returning to the hub. If their return times are
+# earlier than 10:20am, then truck 2's departure time will be 10:20am to account for an erroneous address being updated
+# at 10:20am. If they return later than 10:20am, then truck 2's departure time will be the earlier of the two. Its
+# packages have EOD delivery deadlines, so the later departure will not be an issue.
 truck2 = Truck(2, "4001 South 700 East", None,
-               None, [3,9,18,36,38],0.0)
+               None, [2,3,5,9,10,11,12,18,23,24,27,33,35,36,38,39],0.0)
 
+# Truck 3's departure time of 9:05am is to account for some its packages not arriving at the hub until that time.
 truck3 = Truck(3, "4001 South 700 East", datetime.timedelta,
-               datetime.timedelta(hours=9, minutes=5), [6,25,28,32],0.0)
+               datetime.timedelta(hours=9, minutes=5), [6,17,19,22,25,26,28,32],0.0)
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Start of UI

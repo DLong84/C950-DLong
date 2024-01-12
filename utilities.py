@@ -96,14 +96,11 @@ def dispatchNearestPackages(truck):
         print(pkgList)
         print(f"Truck total miles: {truck.mileage}")
 
-    # Return truck to hub
-    if truck.truck_id == 1:  # TODO-->May need to use truck 3 instead, depending on which gets done earlier
+    # Return trucks 1 and 3 to hub
+    if truck.truck_id in [1, 3]:
         miles = distanceBtwn(currentAddyID, 0)  # Distance from current address back to hub
         truck.mileage += miles
         truck.current_time += datetime.timedelta(hours=miles / 18)
         truck.current_address = getAddyName(0)  # Update truck's address name
-        print(main.truck1.current_time)
-        main.truck2.departure_t = truck.current_time  # FIXME-->Need to account for package 9's address change at 10:20am!!
-        main.truck2.current_time = main.truck2.departure_t
-
+        print(truck.current_time)
 
