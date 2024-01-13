@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(): update_status(), main.py&#10;&#10;-began organizing the main.py file's flow and data calls for running the program&#10;-began UI implementation and testing&#10;-added feature for update_status() to output package status text in different colors&#10;-added feature to update_status() for updating package #9's address depending on the time&#10;&#10;TODO's &amp; FIXME's in place">
+    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(): truck packages, main.py&#10;&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-all packages now loaded on trucks based on delays, address vicinities, and deadlines&#10;-truck 2's departure time calculation algorithm complete and tested&#10;&#10;TODO's &amp; FIXME's in place">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hash_tbl.py" beforeDir="false" afterPath="$PROJECT_DIR$/hash_tbl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.py" beforeDir="false" afterPath="$PROJECT_DIR$/package.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705012368206</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat(): truck packages, main.py&#10;&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-all packages now loaded on trucks based on delays, address vicinities, and deadlines&#10;-truck 2's departure time calculation algorithm complete and tested&#10;&#10;TODO's &amp; FIXME's in place">
+      <option name="closed" value="true" />
+      <created>1705099363667</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1705099363667</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -196,6 +206,7 @@
     <MESSAGE value="feat(): delivery algorithm, Trucks, Packages&#10;&#10;-implemented update_status() method in Packages class&#10;-&quot;finished&quot;/tested dispatchNearestPackages() implementation&#10;-instantiated 3 Truck objects with proper data, started loading with correct packages&#10;-ALL updates and implementations have been successfully tested, EXCEPT for update_status() function&#10;&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): delivery algorithm, Trucks, Packages&#10;&#10;-update_status() edited &amp; successfully tested&#10;-added code to transfer returning truck's time to truck 2's departure_time&#10;-tested dispatchNearestPackages() implementation&#10;-implemented __iter__() for hash table iteration&#10;-ALL updates and implementations have been successfully tested&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): update_status(), main.py&#10;&#10;-began organizing the main.py file's flow and data calls for running the program&#10;-began UI implementation and testing&#10;-added feature for update_status() to output package status text in different colors&#10;-added feature to update_status() for updating package #9's address depending on the time&#10;&#10;TODO's &amp; FIXME's in place" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(): update_status(), main.py&#10;&#10;-began organizing the main.py file's flow and data calls for running the program&#10;-began UI implementation and testing&#10;-added feature for update_status() to output package status text in different colors&#10;-added feature to update_status() for updating package #9's address depending on the time&#10;&#10;TODO's &amp; FIXME's in place" />
+    <MESSAGE value="feat(): truck packages, main.py&#10;&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-all packages now loaded on trucks based on delays, address vicinities, and deadlines&#10;-truck 2's departure time calculation algorithm complete and tested&#10;&#10;TODO's &amp; FIXME's in place" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(): truck packages, main.py&#10;&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-all packages now loaded on trucks based on delays, address vicinities, and deadlines&#10;-truck 2's departure time calculation algorithm complete and tested&#10;&#10;TODO's &amp; FIXME's in place" />
   </component>
 </project>

@@ -1,8 +1,6 @@
 # This class represents a package object for storing package information data
-import csv
-import datetime
 
-import hash_tbl
+import datetime
 
 class Package:
     # The Package object constructor
@@ -26,36 +24,9 @@ class Package:
                 f"Zip: {self.d_zipcode}, Deadline: {self.d_deadline}, Weight (KILO): {self.weight}, "
                 f"Status: {self.d_status}")
 
-    # Method used to open CSV file, extract package data, and insert into hash table. Every row in the file corresponds
-    # to a different package object.
-    # Source: W-2_ChainingHashTable_zyBooks_Key-Value_CSV_Greedy.py
-    def loadPackageInfo(fileNm, my_table):
-        with open(fileNm) as deliveryPackages:
-            packageInfo = csv.reader(deliveryPackages, delimiter=',')
-            next(packageInfo)
-            # Go down the file, row by row, and load the row's data into the package's attributes
-            for pkg in packageInfo:
-                package_id = int(pkg[0])
-                trk_id = None
-                d_address = pkg[1]
-                d_city = pkg[2]
-                d_state = pkg[3]
-                d_zipcode = pkg[4]
-                d_deadline = pkg[5]
-                weight = pkg[6]
-                d_status = None
-                depart_time = None
-                deliver_time = None
-
-                # Instantiate the package object
-                package = Package(package_id, trk_id, d_address, d_deadline, d_city, d_state, d_zipcode, weight,
-                                  d_status, depart_time, deliver_time)
-
-                # Insert package into hash table
-                my_table.add_to_table(package_id, package)  # package_id is used as key
-
-    # Method used to update a Package object's status and text color depending on the time. ANSI escape codes are
-    # utilized for the output status text color changes.
+    # Method used to update a package object's status and text color depending on the time. ANSI escape codes are
+    # utilized for the output status text color changes. This method also updates package #9's address change depending
+    # on the time.
     # Source: https://www.studytonight.com/python-howtos/how-to-print-colored-text-in-python
     def update_status(self, time_probed):
         # Update package's delivery status, depending on the time
