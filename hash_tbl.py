@@ -48,14 +48,17 @@ class HashTable:
 
     # Method used to retrieve package object data from the hash table
     def tblLookUp(self, pkg_id):
+        # Calculate the package's bucket in the hash table using the package ID (key)
         bucket = hash(int(pkg_id)) % self.size
+        # If the package does not exist or the ID is outside the scope of the hash table (being too big or too small)
         if self.table[bucket] is None or int(pkg_id) > self.size or int(pkg_id) < 1:
             print("Package ID not found, please try again")
             return False
+        # Otherwise, return the package object containing its attributes/data
         else:
             return self.table[bucket]
 
-    # Method used to display all existing hash table package objects and their data
+    # Method used to display all existing hash table package objects and their data (in numerical order)
     def printAllPkgs(self):
         for pkg in self.table[1:]:  # All package except the first
             if pkg is not None:  # If package object exists

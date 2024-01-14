@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(): truck packages, main.py&#10;&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-all packages now loaded on trucks based on delays, address vicinities, and deadlines&#10;-truck 2's departure time calculation algorithm complete and tested&#10;&#10;TODO's &amp; FIXME's in place">
+    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(): utilities.py, main.py, User Interface&#10;&#10;-moved loadPackageInfo() function to utilities.py&#10;-fixed circular import issue with dependency injection by adding a hash table as a parameter for dispatchNearestPackages()&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-fixed printAllPkgs() to display package #40 last&#10;-UI finished and fully operational&#10;&#10;TODO's &amp; FIXME's in place">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hash_tbl.py" beforeDir="false" afterPath="$PROJECT_DIR$/hash_tbl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.py" beforeDir="false" afterPath="$PROJECT_DIR$/package.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,24 +36,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Trial.executor&quot;: &quot;Run&quot;,
-    &quot;Python.csv_load.executor&quot;: &quot;Run&quot;,
-    &quot;Python.hash_tbl.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.package.executor&quot;: &quot;Run&quot;,
-    &quot;Python.testing.executor&quot;: &quot;Run&quot;,
-    &quot;Python.utilities.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Language Defaults&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Trial.executor": "Run",
+    "Python.csv_load.executor": "Run",
+    "Python.hash_tbl.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.package.executor": "Run",
+    "Python.testing.executor": "Run",
+    "Python.utilities.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/david/IdeaProjects/Program Testing files/C950 Testing",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Language Defaults"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\david\IdeaProjects\Program Testing files\C950 Testing" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="package" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python">
       <module name="C950-DLong" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -64,11 +68,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_NAME" value="Python 3.12 (C950-DLong)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/package.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -77,11 +82,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.package" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -179,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705099363667</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat(): utilities.py, main.py, User Interface&#10;&#10;-moved loadPackageInfo() function to utilities.py&#10;-fixed circular import issue with dependency injection by adding a hash table as a parameter for dispatchNearestPackages()&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-fixed printAllPkgs() to display package #40 last&#10;-UI finished and fully operational&#10;&#10;TODO's &amp; FIXME's in place">
+      <option name="closed" value="true" />
+      <created>1705175862370</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1705175862370</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -207,6 +215,7 @@
     <MESSAGE value="feat(): delivery algorithm, Trucks, Packages&#10;&#10;-update_status() edited &amp; successfully tested&#10;-added code to transfer returning truck's time to truck 2's departure_time&#10;-tested dispatchNearestPackages() implementation&#10;-implemented __iter__() for hash table iteration&#10;-ALL updates and implementations have been successfully tested&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): update_status(), main.py&#10;&#10;-began organizing the main.py file's flow and data calls for running the program&#10;-began UI implementation and testing&#10;-added feature for update_status() to output package status text in different colors&#10;-added feature to update_status() for updating package #9's address depending on the time&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): truck packages, main.py&#10;&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-all packages now loaded on trucks based on delays, address vicinities, and deadlines&#10;-truck 2's departure time calculation algorithm complete and tested&#10;&#10;TODO's &amp; FIXME's in place" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(): truck packages, main.py&#10;&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-all packages now loaded on trucks based on delays, address vicinities, and deadlines&#10;-truck 2's departure time calculation algorithm complete and tested&#10;&#10;TODO's &amp; FIXME's in place" />
+    <MESSAGE value="feat(): utilities.py, main.py, User Interface&#10;&#10;-moved loadPackageInfo() function to utilities.py&#10;-fixed circular import issue with dependency injection by adding a hash table as a parameter for dispatchNearestPackages()&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-fixed printAllPkgs() to display package #40 last&#10;-UI finished and fully operational&#10;&#10;TODO's &amp; FIXME's in place" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(): utilities.py, main.py, User Interface&#10;&#10;-moved loadPackageInfo() function to utilities.py&#10;-fixed circular import issue with dependency injection by adding a hash table as a parameter for dispatchNearestPackages()&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-fixed printAllPkgs() to display package #40 last&#10;-UI finished and fully operational&#10;&#10;TODO's &amp; FIXME's in place" />
   </component>
 </project>
