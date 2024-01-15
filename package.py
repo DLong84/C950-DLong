@@ -18,7 +18,9 @@ class Package:
         self.depart_time = depart_time
         self.deliver_time = deliver_time
 
-    # String method to define how package objects should be shown as a string
+    # String method to define how package objects should be shown as a string. This was necessary because python will
+    # display the package objects as a memory reference, which is not practical for this program.
+    # Source: https://www.digitalocean.com/community/tutorials/python-str-repr-functions
     def __str__(self):
         return (f"PackageID: {self.package_id}, Address: {self.d_address}, City: {self.d_city}, State: {self.d_state}, "
                 f"Zip: {self.d_zipcode}, Deadline: {self.d_deadline}, Weight (KILO): {self.weight}, "

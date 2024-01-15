@@ -4,10 +4,14 @@
 
 import datetime
 import utilities
-from package import Package
 from hash_tbl import HashTable
 from truck import Truck
 
+# ------------------------------------------------------------------
+# Referenced throughout project: Python Software Foundation. (2024, January).
+#                                Python 3.12.1 documentation.
+#                                https://docs.python.org/3/
+# -------------------------------------------------------------------
 # Load distance data from files
 utilities.loadDistances("CSV/address_distances.csv")
 
@@ -44,16 +48,17 @@ truck3 = Truck(3, "4001 South 700 East", datetime.timedelta,
 utilities.dispatchNearestPackages(truck1, pckgHashTbl)
 utilities.dispatchNearestPackages(truck3, pckgHashTbl)
 
-# If trucks 1 & 3 return to the hub before package #9's correct address is given, set truck 2's current and departure
+# This if-else block will ensure truck 2 will not depart until at least one of the drivers has returned to the hub.
+# If trucks 1 or 3 return to the hub before package #9's correct address is given, set truck 2's current and departure
 # times to 10:20am.
-if truck1.current_time and truck3.current_time < datetime.timedelta(hours=10, minutes=20):
-    truck2.departure_t = datetime.timedelta(hours=10, minutes=20)
-    truck2.current_time = truck2.departure_t
-# Otherwise, set truck 2's current and departure times to the time the first truck arrives back to the
-# # hub.
+if (truck1.current_time < datetime.timedelta(hours=10, minutes=20) or
+        truck3.current_time < datetime.timedelta(hours=10, minutes=20)):
+    truck2.departure_t = datetime.timedelta(hours=10, minutes=20)  # Set Truck 2's departure time to 10:20am
+    truck2.current_time = truck2.departure_t  # Set Truck 2's current time to 10:20am
+# Otherwise, set truck 2's current and departure times to the time the first truck arrives back to the hub.
 else:
     truck2.departure_t = min(truck1.current_time, truck3.current_time)  # The earliest of the truck's finish time
-    truck2.current_time = truck2.departure_t
+    truck2.current_time = truck2.departure_t  # Set Truck 2's current time to its departure time just calculated above
 
 # Deliver packages on truck 2
 utilities.dispatchNearestPackages(truck2, pckgHashTbl)

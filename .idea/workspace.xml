@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(): utilities.py, main.py, User Interface&#10;&#10;-moved loadPackageInfo() function to utilities.py&#10;-fixed circular import issue with dependency injection by adding a hash table as a parameter for dispatchNearestPackages()&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-fixed printAllPkgs() to display package #40 last&#10;-UI finished and fully operational&#10;&#10;TODO's &amp; FIXME's in place">
+    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(): User Interface, comments&#10;&#10;-added blue color for UI's header lines and cyan to the trucks' total mileage output&#10;-fixed/handled ValueError issue in UI for package ID input&#10;-finished commenting all code in main.py&#10;-added comments to Package &amp; Truck constructors&#10;&#10;TODO's &amp; FIXME's in place">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hash_tbl.py" beforeDir="false" afterPath="$PROJECT_DIR$/hash_tbl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.py" beforeDir="false" afterPath="$PROJECT_DIR$/package.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,23 +38,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Trial.executor": "Run",
-    "Python.csv_load.executor": "Run",
-    "Python.hash_tbl.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.package.executor": "Run",
-    "Python.testing.executor": "Run",
-    "Python.utilities.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/david/IdeaProjects/Program Testing files/C950 Testing",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Language Defaults"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Trial.executor&quot;: &quot;Run&quot;,
+    &quot;Python.csv_load.executor&quot;: &quot;Run&quot;,
+    &quot;Python.hash_tbl.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.package.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testing.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utilities.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/david/IdeaProjects/Program Testing files/C950 Testing&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Language Defaults&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\david\IdeaProjects\Program Testing files\C950 Testing" />
@@ -187,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705175862370</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat(): User Interface, comments&#10;&#10;-added blue color for UI's header lines and cyan to the trucks' total mileage output&#10;-fixed/handled ValueError issue in UI for package ID input&#10;-finished commenting all code in main.py&#10;-added comments to Package &amp; Truck constructors&#10;&#10;TODO's &amp; FIXME's in place">
+      <option name="closed" value="true" />
+      <created>1705271747110</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1705271747110</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -216,6 +226,7 @@
     <MESSAGE value="feat(): update_status(), main.py&#10;&#10;-began organizing the main.py file's flow and data calls for running the program&#10;-began UI implementation and testing&#10;-added feature for update_status() to output package status text in different colors&#10;-added feature to update_status() for updating package #9's address depending on the time&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): truck packages, main.py&#10;&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-all packages now loaded on trucks based on delays, address vicinities, and deadlines&#10;-truck 2's departure time calculation algorithm complete and tested&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): utilities.py, main.py, User Interface&#10;&#10;-moved loadPackageInfo() function to utilities.py&#10;-fixed circular import issue with dependency injection by adding a hash table as a parameter for dispatchNearestPackages()&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-fixed printAllPkgs() to display package #40 last&#10;-UI finished and fully operational&#10;&#10;TODO's &amp; FIXME's in place" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(): utilities.py, main.py, User Interface&#10;&#10;-moved loadPackageInfo() function to utilities.py&#10;-fixed circular import issue with dependency injection by adding a hash table as a parameter for dispatchNearestPackages()&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-fixed printAllPkgs() to display package #40 last&#10;-UI finished and fully operational&#10;&#10;TODO's &amp; FIXME's in place" />
+    <MESSAGE value="feat(): User Interface, comments&#10;&#10;-added blue color for UI's header lines and cyan to the trucks' total mileage output&#10;-fixed/handled ValueError issue in UI for package ID input&#10;-finished commenting all code in main.py&#10;-added comments to Package &amp; Truck constructors&#10;&#10;TODO's &amp; FIXME's in place" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(): User Interface, comments&#10;&#10;-added blue color for UI's header lines and cyan to the trucks' total mileage output&#10;-fixed/handled ValueError issue in UI for package ID input&#10;-finished commenting all code in main.py&#10;-added comments to Package &amp; Truck constructors&#10;&#10;TODO's &amp; FIXME's in place" />
   </component>
 </project>

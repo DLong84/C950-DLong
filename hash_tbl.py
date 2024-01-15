@@ -16,31 +16,32 @@ class HashTable:
     # Method used to insert package objects into hash table buckets and check the load factor for self-adjustment
     def add_to_table(self, key, pkg):
         # Check load factor & resize if table is full
-        load = self.elements / self.size
-        if load >= 1:
-            self.resize()
+        load = self.elements / self.size  # The load = (Packages currently in the table)/(the table's current size)
+        if load >= 1:  # If the table is full
+            self.resize()  # Call the resize method to resize the hash table
 
         bckt = hash(key) % self.size  # Calculate bucket from hash
-        if self.table[bckt] is None:
-            self.table[bckt] = pkg  # Add pkg to bucket
-            self.elements += 1
+        if self.table[bckt] is None:  # If bucket is empty
+            self.table[bckt] = pkg  # Place the package in the bucket
+            self.elements += 1  # Add 1 to the number of elements currently in the table
 
         # print("Package with ID: " + str(pkg.package_id) + ", successfully added to hash table")
         # print(self.table)
 
-    # Method used to adjust the size of the hash table to keep a 1-1 mapping and prevent collisions
+    # Method used to adjust the size of the hash table to keep a 1-1 mapping and prevent collisions. This is what keeps
+    # the hash table as a self-adjusting data structure.
     def resize(self):
-        newTableSize = self.size * 2  # Double the table
+        newTableSize = self.size * 2  # Double the table size
         resizedTable = [None] * newTableSize  # Rebuild the table structure to reflect the new size
 
         # Rehash and insert existing package objects into new hash table
-        for pkg in self.table:
-            if pkg is not None:
-                key = pkg.package_id  # Pull package id
-                newBkt = hash(key) % newTableSize  # Calculate bucket from updated hash function
-                resizedTable[newBkt] = pkg  # Add pkg to bucket
+        for pkg in self.table:  # Go through hash table
+            if pkg is not None:  # As long as a package exists in the bucket
+                key = pkg.package_id  # Pull package id and assign as key
+                newBkt = hash(key) % newTableSize  # Calculate the new bucket from updated hash function
+                resizedTable[newBkt] = pkg  # Place the package in the new bucket
 
-        # Assign initial table variables with new table values
+        # Assign initial table variables with the new table values
         self.table = resizedTable
         self.size = newTableSize
 
