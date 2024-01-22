@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="feat(): User Interface, comments&#10;&#10;-fixed logic error in assigning a departure time for truck 2&#10;-finished commenting/cleaning-up entire project, including dispatchNearestPackages()&#10;&#10;*Project is complete*">
+    <list default="true" id="0c32416b-7568-448d-9ae9-d71edf0554de" name="Changes" comment="Final commit - *Project is complete*">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hash_tbl.py" beforeDir="false" afterPath="$PROJECT_DIR$/hash_tbl.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705358531027</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Final commit - *Project is complete*">
+      <option name="closed" value="true" />
+      <created>1705958724483</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1705958724483</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -233,6 +240,7 @@
     <MESSAGE value="feat(): utilities.py, main.py, User Interface&#10;&#10;-moved loadPackageInfo() function to utilities.py&#10;-fixed circular import issue with dependency injection by adding a hash table as a parameter for dispatchNearestPackages()&#10;-continued organizing/commenting the main.py file's flow and data calls for running the program&#10;-fixed printAllPkgs() to display package #40 last&#10;-UI finished and fully operational&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): User Interface, comments&#10;&#10;-added blue color for UI's header lines and cyan to the trucks' total mileage output&#10;-fixed/handled ValueError issue in UI for package ID input&#10;-finished commenting all code in main.py&#10;-added comments to Package &amp; Truck constructors&#10;&#10;TODO's &amp; FIXME's in place" />
     <MESSAGE value="feat(): User Interface, comments&#10;&#10;-fixed logic error in assigning a departure time for truck 2&#10;-finished commenting/cleaning-up entire project, including dispatchNearestPackages()&#10;&#10;*Project is complete*" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(): User Interface, comments&#10;&#10;-fixed logic error in assigning a departure time for truck 2&#10;-finished commenting/cleaning-up entire project, including dispatchNearestPackages()&#10;&#10;*Project is complete*" />
+    <MESSAGE value="Final commit - *Project is complete*" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit - *Project is complete*" />
   </component>
 </project>

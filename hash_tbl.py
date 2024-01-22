@@ -42,8 +42,6 @@ class HashTable:
         self.table = resizedTable
         self.size = newTableSize
 
-        # print("Hash table size has been adjusted to " + str(self.size))
-
     # Method used to retrieve package object data from the hash table
     def tblLookUp(self, pkg_id):
         # Calculate the package's bucket in the hash table using the package ID (key)
