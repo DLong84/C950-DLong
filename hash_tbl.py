@@ -25,9 +25,6 @@ class HashTable:
             self.table[bckt] = pkg  # Place the package in the bucket
             self.elements += 1  # Add 1 to the number of elements currently in the table
 
-        # print("Package with ID: " + str(pkg.package_id) + ", successfully added to hash table")
-        # print(self.table)
-
     # Method used to adjust the size of the hash table to keep a 1-1 mapping and prevent collisions. This is what keeps
     # the hash table as a self-adjusting data structure.
     def resize(self):
